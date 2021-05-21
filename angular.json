@@ -51,7 +51,12 @@
               "apps/jawache-tutorial/src/favicon.ico",
               "apps/jawache-tutorial/src/assets"
             ],
-            "styles": ["apps/jawache-tutorial/src/styles.scss"],
+            "styles": [
+              "apps/jawache-tutorial/src/styles.scss",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeng/resources/themes/arya-green/theme.css"
+            ],
             "scripts": []
           },
           "configurations": {
