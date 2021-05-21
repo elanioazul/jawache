@@ -25,6 +25,9 @@
     "jawache-tutorial-e2e": {
       "tags": [],
       "implicitDependencies": ["jawache-tutorial"]
+    },
+    "lib-jawache": {
+      "tags": []
     }
   }
 }

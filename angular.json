@@ -154,6 +154,31 @@
           }
         }
       }
+    },
+    "lib-jawache": {
+      "projectType": "library",
+      "root": "libs/lib-jawache",
+      "sourceRoot": "libs/lib-jawache/src",
+      "prefix": "jawache-tutorial",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/lib-jawache"],
+          "options": {
+            "jestConfig": "libs/lib-jawache/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/lib-jawache/src/**/*.ts",
+              "libs/lib-jawache/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
