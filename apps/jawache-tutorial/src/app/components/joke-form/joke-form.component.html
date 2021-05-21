@@ -1,1 +1,19 @@
-<p>joke-form works!</p>
+<p-card>
+  <ng-template class="p-card-header" pTemplate="title">
+    Create Joke
+  </ng-template>
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col">
+      <label for="setup">Setup</label>
+      <input id="setup" type="text" placeholder="Enter the setup" #setup pInputText>
+    </div>
+    <div class="p-field p-col">
+      <label for="punchline">Enter the punchline of ur joke</label>
+      <input id="punchline" type="text" pInputText placeholder="Enter the punchline" #punchline>
+    </div>
+  </div>
+  <jawache-tutorial-btn></jawache-tutorial-btn>
+  <ng-template class="p-card-footer" pTemplate="footer">
+    Are you done? Good
+  </ng-template>
+</p-card>

@@ -1,1 +1,10 @@
-<p>joke works!</p>
+<p-card>
+  <ng-template class="p-card-header" pTemplate="title">
+    {{data.setup}}
+  </ng-template>
+  <p class="p-card-content" [hidden]="data.hide">{{data.punchline}}</p>
+  <a (click)="data.toggle()" class="btn btn-warning">Tell Me</a>
+  <ng-template class="p-card-footer" pTemplate="footer">
+    Footer content here
+  </ng-template>
+</p-card>

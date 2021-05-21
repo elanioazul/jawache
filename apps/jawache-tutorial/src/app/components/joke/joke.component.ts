@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Joke } from '@jawache-tutorial/lib-jawache';
 
 @Component({
@@ -8,14 +8,16 @@ import { Joke } from '@jawache-tutorial/lib-jawache';
 })
 export class JokeComponent implements OnInit {
 
-  constructor(private joke: Joke, setup: string, punchline: string) { 
-    this.joke.setup = setup;
-    this.joke.punchline = punchline;
-    this.joke.hide = true;
+  @Input('joke') data: Joke;
+
+  constructor(setup: string, punchline: string) { 
+    this.data.setup = setup;
+    this.data.punchline = punchline;
+    this.data.hide = true;
   }
 
   toggle() {
-    this.joke.hide = !this.joke.hide;
+    this.data.hide = !this.data.hide;
   }
 
   ngOnInit(): void {
