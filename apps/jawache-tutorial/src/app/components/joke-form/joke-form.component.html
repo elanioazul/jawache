@@ -12,7 +12,7 @@
       <input id="punchline" type="text" pInputText placeholder="Enter the punchline" #punchline>
     </div>
   </div>
-  <jawache-tutorial-btn></jawache-tutorial-btn>
+  <jawache-tutorial-btn (click)="createJoke(setup.value, punchline.value)"></jawache-tutorial-btn>
   <ng-template class="p-card-footer" pTemplate="footer">
     Are you done? Good
   </ng-template>

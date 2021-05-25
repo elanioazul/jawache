@@ -2,9 +2,9 @@
   <ng-template class="p-card-header" pTemplate="title">
     {{data.setup}}
   </ng-template>
-  <p class="p-card-content" [hidden]="data.hide">{{data.punchline}}</p>
-  <a (click)="data.toggle()" class="btn btn-warning">Tell Me</a>
-  <ng-template class="p-card-footer" pTemplate="footer">
-    Footer content here
+  <ng-template class="p-card-footer" pTemplate="footer" [hidden]="data.hide">
+    {{data.punchline}}
   </ng-template>
+  <button (click)="data.toggle()" pButton type="button" label="Tell me" class="p-button-warning"></button>
+  <button (click)="deleteItem()" pButton type="button" label="Delete" class="p-button-danger"></button>
 </p-card>

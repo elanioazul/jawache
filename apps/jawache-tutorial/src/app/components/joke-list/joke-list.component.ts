@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Joke } from '@jawache-tutorial/lib-jawache';
+import { Joke } from '../../classes/joke.class';
 
 @Component({
   selector: 'jawache-tutorial-joke-list',
@@ -18,8 +18,15 @@ export class JokeListComponent implements OnInit {
     ];
   }
 
-  addJoke(joke: any) {
+  addJoke(joke: Joke) {
     this.jokes.unshift(joke);
+  }
+
+  deleteJoke(joke: Joke) {
+    const indexToDelete = this.jokes.indexOf(joke);
+    if (indexToDelete !== -1) {
+      this.jokes.splice(indexToDelete,1);
+    }
   }
 
   ngOnInit(): void {

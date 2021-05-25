@@ -1,26 +1,24 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Joke } from '@jawache-tutorial/lib-jawache';
-
+import { Component, Input, Output, EventEmitter, OnInit, ViewEncapsulation } from '@angular/core';
+import { Joke } from '../../classes/joke.class';
 @Component({
   selector: 'jawache-tutorial-joke',
   templateUrl: './joke.component.html',
-  styleUrls: ['./joke.component.scss']
+  styleUrls: ['./joke.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class JokeComponent implements OnInit {
 
-  @Input('joke') data: Joke;
+  @Input('joke') data!: Joke;
+  @Output() jokeDeleted = new EventEmitter<Joke>();
 
-  constructor(setup: string, punchline: string) { 
-    this.data.setup = setup;
-    this.data.punchline = punchline;
-    this.data.hide = true;
-  }
 
-  toggle() {
-    this.data.hide = !this.data.hide;
-  }
+  constructor() { }
 
   ngOnInit(): void {
+  }
+  
+  deleteItem() {
+    this.jokeDeleted.emit(this.data);
   }
 
 }

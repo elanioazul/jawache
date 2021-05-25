@@ -1,11 +1,12 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewEncapsulation  } from '@angular/core';
 
-import { Joke } from '@jawache-tutorial/lib-jawache';
+import { Joke } from '../../classes/joke.class'
 
 @Component({
   selector: 'jawache-tutorial-joke-form',
   templateUrl: './joke-form.component.html',
-  styleUrls: ['./joke-form.component.scss']
+  styleUrls: ['./joke-form.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class JokeFormComponent implements OnInit {
 
