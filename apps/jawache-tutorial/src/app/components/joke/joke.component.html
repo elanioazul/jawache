@@ -1,9 +1,9 @@
 <p-card>
   <ng-template class="p-card-header" pTemplate="title">
-    {{data.setup}}
+    <ng-content select=".setup"></ng-content>
   </ng-template>
   <ng-template class="p-card-footer" pTemplate="footer" [hidden]="data.hide">
-    <ng-content></ng-content>
+    <ng-content select=".punchline"></ng-content>
   </ng-template>
   <button (click)="data.toggle()" pButton type="button" label="Tell me" class="p-button-warning"></button>
   <button (click)="deleteItem()" pButton type="button" label="Delete" class="p-button-danger"></button>
