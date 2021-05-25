@@ -1,2 +1,4 @@
 <jawache-tutorial-joke-form (jokeCreated)="addJoke($event)"></jawache-tutorial-joke-form>
-<jawache-tutorial-joke *ngFor="let j of jokes" [joke]="j" (jokeDeleted)="deleteJoke($event)"></jawache-tutorial-joke>
+<jawache-tutorial-joke *ngFor="let j of jokes" [joke]="j" (jokeDeleted)="deleteJoke($event)">
+  <h4>{{ j.punchline }}</h4>
+</jawache-tutorial-joke>
