@@ -1,6 +1,9 @@
 <jawache-tutorial-joke-list>
   <jawache-tutorial-joke [joke]="joke">
-    <span class="setup">{{ joke.setup }}?</span>
-    <h1 class="punchline">{{ joke.punchline }}</h1>
+    <div #insideNgContent>
+      <span class="setup">{{ joke.setup }}?</span>
+      <h1 class="punchline">{{ joke.punchline }}</h1>
+    </div>
+
   </jawache-tutorial-joke>
 </jawache-tutorial-joke-list>

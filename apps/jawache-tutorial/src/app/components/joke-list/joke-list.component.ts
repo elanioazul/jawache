@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewChildren, QueryList, ElementRef, ViewContainerRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList, ElementRef, ViewContainerRef, ContentChild, AfterViewInit, AfterContentInit } from '@angular/core';
 import { Joke } from '../../classes/joke.class';
 import { JokeComponent } from '../joke/joke.component'
 
@@ -7,11 +7,11 @@ import { JokeComponent } from '../joke/joke.component'
   templateUrl: './joke-list.component.html',
   styleUrls: ['./joke-list.component.scss']
 })
-export class JokeListComponent implements AfterViewInit {
+export class JokeListComponent implements AfterViewInit, AfterContentInit {
 
   @ViewChild(JokeComponent) jokeViewChild: JokeComponent | undefined;
-  @ViewChildren(JokeComponent, { read: ViewContainerRef }) jokeViewChildren: QueryList<JokeComponent> | undefined
-
+  //@ViewChildren(JokeComponent, { read: ViewContainerRef }) jokeViewChildren: QueryList<JokeComponent> | undefined
+  @ContentChild(JokeComponent)('insideNgContent') insideNgContent: any;
   public jokes: Joke[] = [
     new Joke("What did the cheese say when it looked in the mirror", "Hello-me (Halloumi)"),
     new Joke("What kind of cheese do you use to disguise a small horse", "Mask-a-pony (Mascarpone)")
@@ -25,8 +25,9 @@ export class JokeListComponent implements AfterViewInit {
     console.log(`ngAfterViewInit - jokeViewChild is ${this.jokeViewChild}`);
     // let myjokes: JokeComponent[] = this.jokeViewChildren.toArray();
     // console.log(jokes)
-    this.jokeViewChildren?.forEach(joke => console.log(joke))
-
+  }
+  ngAfterContentInit() {
+    console.log('the insidengContent that actually comes from host component is: ' + this.insideNgContent)
   }
 
   // addJoke() {
