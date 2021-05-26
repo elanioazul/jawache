@@ -10,7 +10,7 @@ import { JokeComponent } from '../joke/joke.component'
 export class JokeListComponent implements AfterViewInit {
 
   @ViewChild(JokeComponent) jokeViewChild: JokeComponent | undefined;
-  @ViewChildren(JokeComponent) jokeViewChilder: QueryList<JokeComponent> | undefined
+  @ViewChildren(JokeComponent) jokeViewChildren: QueryList<JokeComponent> | undefined
 
   public jokes: Joke[] = [
     new Joke("What did the cheese say when it looked in the mirror", "Hello-me (Halloumi)"),
@@ -23,6 +23,10 @@ export class JokeListComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     console.log(`ngAfterViewInit - jokeViewChild is ${this.jokeViewChild}`);
+    // let myjokes: JokeComponent[] = this.jokeViewChildren.toArray();
+    // console.log(jokes)
+    this.jokeViewChildren?.forEach(joke => console.log(joke))
+
   }
 
   // addJoke() {
