@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewChildren, QueryList , AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList, ElementRef, AfterViewInit } from '@angular/core';
 import { Joke } from '../../classes/joke.class';
 import { JokeComponent } from '../joke/joke.component'
 
@@ -10,7 +10,7 @@ import { JokeComponent } from '../joke/joke.component'
 export class JokeListComponent implements AfterViewInit {
 
   @ViewChild(JokeComponent) jokeViewChild: JokeComponent | undefined;
-  @ViewChildren(JokeComponent) jokeViewChildren: QueryList<JokeComponent> | undefined
+  @ViewChildren(JokeComponent, { read: ElementRef }) jokeViewChildren: QueryList<JokeComponent> | undefined
 
   public jokes: Joke[] = [
     new Joke("What did the cheese say when it looked in the mirror", "Hello-me (Halloumi)"),
