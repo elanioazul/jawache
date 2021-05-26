@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewChildren, QueryList, ViewContainerRef, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList, ViewContainerRef, AfterViewInit, AfterContentInit, ElementRef, ContentChild } from '@angular/core';
 import { Joke } from '../../classes/joke.class';
 import { JokeComponent } from '../joke/joke.component'
 
@@ -7,11 +7,13 @@ import { JokeComponent } from '../joke/joke.component'
   templateUrl: './joke-list.component.html',
   styleUrls: ['./joke-list.component.scss']
 })
-export class JokeListComponent implements AfterViewInit {
+export class JokeListComponent implements AfterContentInit, AfterViewInit {
 
   @ViewChild(JokeComponent) jokeViewChild: JokeComponent | undefined;
   @ViewChildren(JokeComponent, { read: ViewContainerRef }) jokeViewChildren: QueryList<JokeComponent> | undefined
   @ViewChild('header') headerEl: ElementRef | undefined;
+  @ContentChild(JokeComponent) jokeContentChild: JokeComponent | undefined;
+
   public jokes: Joke[] = [
     new Joke("What did the cheese say when it looked in the mirror", "Hello-me (Halloumi)"),
     new Joke("What kind of cheese do you use to disguise a small horse", "Mask-a-pony (Mascarpone)")
@@ -19,6 +21,10 @@ export class JokeListComponent implements AfterViewInit {
 
   constructor() {
     console.log(`new - jokeViewChild is ${this.jokeViewChild}`)
+  }
+
+  ngAfterContentInit() {
+    console.log(`ngAfterContentInit - jokeContentChild is thissssssssssssss ${this.jokeContentChild}`);
   }
 
   ngAfterViewInit() {
