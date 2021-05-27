@@ -10,17 +10,18 @@ export class CardHoverDirective {
     private renderer: Renderer2
     ) {}
 
-  private highlight(color: string) {
-    this.renderer.setStyle(this.el.nativeElement, 'backgroundColor ', color)
+  private hoverit(color?: string) {
+    this.renderer.removeClass(this.el.nativeElement, 'p-button-warning'),
+    this.renderer.addClass(this.el.nativeElement, 'p-button-help');
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
-  this.highlight('yellow');
+  @HostListener('mouseover') onMouseHover() {
+  this.hoverit();
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
-    this.highlight('');
-  }
+  // @HostListener('mouseleave') onMouseLeave() {
+  //   this.highlight('');
+  // }
 
   
 }
