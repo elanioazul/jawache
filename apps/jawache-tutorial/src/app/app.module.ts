@@ -11,13 +11,14 @@ import {PanelModule} from 'primeng/panel';
 import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import { JokeComponent } from './components/joke/joke.component';
+import { CardHoverDirective } from './directives/card-hover.directive';
 
 @NgModule({
   declarations: [
     AppComponent, 
     JokeFormComponent, 
     JokeListComponent, 
-    BtnComponent, JokeComponent
+    BtnComponent, JokeComponent, CardHoverDirective
   ],
   imports: [
     BrowserModule,
