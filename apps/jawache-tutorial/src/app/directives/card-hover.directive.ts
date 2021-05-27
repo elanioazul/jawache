@@ -11,8 +11,10 @@ export class CardHoverDirective {
     ) {}
 
   private hoverit(color?: string) {
-    this.renderer.removeClass(this.el.nativeElement, 'p-button-warning'),
-    this.renderer.addClass(this.el.nativeElement, 'p-button-help');
+    //this.renderer.removeClass(this.el.nativeElement, 'p-button-warning'),
+    const part = this.el.nativeElement.querySelector('.p-button-warning');
+    this.renderer.removeClass(part, 'p-button-warning')
+    this.renderer.addClass(part, 'p-button-help');
   }
 
   @HostListener('mouseover') onMouseHover() {
