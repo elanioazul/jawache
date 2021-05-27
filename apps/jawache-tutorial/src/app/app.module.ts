@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormModule } from './modules/form/form.module'
 
 import { AppComponent } from './app.component';
 
@@ -24,7 +25,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     BrowserModule,
     PanelModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    FormModule
   ],
   providers: [],
   bootstrap: [AppComponent],
