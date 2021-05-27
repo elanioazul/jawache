@@ -1,9 +1,11 @@
-import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[jawacheTutorialCardHover]'
 })
 export class CardHoverDirective {
+
+  private ishovering: boolean | undefined;
 
   constructor(
     private el: ElementRef,
@@ -15,15 +17,20 @@ export class CardHoverDirective {
     const part = this.el.nativeElement.querySelector('.p-button-warning');
     this.renderer.removeClass(part, 'p-button-warning')
     this.renderer.addClass(part, 'p-button-help');
+    this.ishovering = true;
   }
 
   @HostListener('mouseover') onMouseHover() {
-  this.hoverit();
+    const part = this.el.nativeElement.querySelector('.p-card-footer');
+    this.renderer.setStyle(part, 'display', 'block');
+    this.hoverit();
   }
 
-  // @HostListener('mouseleave') onMouseLeave() {
-  //   this.highlight('');
-  // }
+  @HostListener('mouseout') onMouseOut() {
+    const part = this.el.nativeElement.querySelector('.p-card-footer');
+    this.renderer.setStyle(part, 'display', 'none');
+    this.ishovering = false;
+  }
 
   
 }
