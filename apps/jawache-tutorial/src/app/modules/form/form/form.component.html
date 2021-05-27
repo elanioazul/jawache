@@ -1,1 +1,26 @@
-<p>form works!</p>
+<form [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+  <!-- inputtext -->
+  <!-- <span class="p-float-label">
+    <input id="float-input" type="text" pInputText>
+    <label for="float-input">Username</label>
+  </span> -->
+  <!-- inputarea -->
+  <h5>Comments</h5>
+  <textarea formControlName="comment" rows="5" cols="30" pInputTextarea></textarea>
+  <!-- inputs -->
+  <div class="card">
+    <h5>Fill in please</h5>
+    <div class="p-fluid">
+      <div class="p-field">
+        <label for="name">Name</label>
+        <input formControlName="name" id="name" type="text" pInputText>
+      </div>
+      <div class="p-field">
+        <label for="email">Email address</label>
+        <input formControlName="email" id="email" type="text" pInputText>
+      </div>
+    </div>
+  </div>
+  <!-- button to submit -->
+  <p-button label="Submit"></p-button>
+</form>
