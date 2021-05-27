@@ -5,7 +5,7 @@ import { Directive, ElementRef, Renderer2, HostListener, HostBinding } from '@an
 })
 export class CardHoverDirective {
 
-  private ishovering: boolean | undefined;
+  @HostBinding('style.backgroundColor') private ishovering: string | undefined;
 
   constructor(
     private el: ElementRef,
@@ -17,19 +17,19 @@ export class CardHoverDirective {
     const part = this.el.nativeElement.querySelector('.p-button-warning');
     this.renderer.removeClass(part, 'p-button-warning')
     this.renderer.addClass(part, 'p-button-help');
-    this.ishovering = true;
   }
 
   @HostListener('mouseover') onMouseHover() {
     const part = this.el.nativeElement.querySelector('.p-card-footer');
     this.renderer.setStyle(part, 'display', 'block');
-    this.hoverit();
+    //this.hoverit();
+    this.ishovering = 'green';
   }
 
   @HostListener('mouseout') onMouseOut() {
     const part = this.el.nativeElement.querySelector('.p-card-footer');
     this.renderer.setStyle(part, 'display', 'none');
-    this.ishovering = false;
+    this.ishovering = 'yellow';
   }
 
   
