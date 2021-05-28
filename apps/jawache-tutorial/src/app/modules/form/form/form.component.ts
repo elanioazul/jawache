@@ -8,6 +8,8 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 })
 export class FormComponent implements OnInit {
 
+  public form: any;
+
   comment = new FormControl("", Validators.required);
   name = new FormControl("", Validators.required);
   email = new FormControl("", [ 
@@ -15,21 +17,22 @@ export class FormComponent implements OnInit {
     Validators.pattern("[^ @]*@[^ @]*")
   ])
   
-  reactiveform = new FormGroup({
-      "comment": this.comment,
-      "name": this.name,
-      "email": this.email
-    });
+
 
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
-    //this.reactiveform.get("comment").valueChanges.subscribe( data => console.log(JSON.stringify(data)))
+    this.form = this.fb.group({
+      comment: this.comment,
+      name: this.name,
+      email: this.email
+    });
+    this.form.get("comment").valueChanges.subscribe( (data: any) => console.log(JSON.stringify(data)))
   }
 
   onSubmit() {
-    console.log("Form submitted with this contetn: " + this.reactiveform.value);
+    console.log("Form submitted with this contetn: " + this.form.value);
   }
 
 }
