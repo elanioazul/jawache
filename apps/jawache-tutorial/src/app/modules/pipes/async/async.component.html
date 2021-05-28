@@ -6,9 +6,9 @@
     sint occaecat
     cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   <ng-template pTemplate="content" ngNonBindable>
-    More of my content is {{promiseData}}
+    More of my content is {{promise}}
   </ng-template>
   <ng-template pTemplate="footer">
-    {{promiseData}}
+    {{promise | async }}
   </ng-template>
 </p-panel>

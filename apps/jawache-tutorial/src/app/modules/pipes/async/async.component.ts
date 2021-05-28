@@ -7,16 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AsyncComponent implements OnInit {
 
-  public promiseData: string | undefined;
+  public promise: Promise<string> | undefined;
 
   constructor() { 
-    this.getPromise().then( (v:any) => this.promiseData = v )
+    this.promise = this.getPromise();
   }
 
   ngOnInit(): void {
   }
 
-  getPromise() {
+  getPromise(): Promise<string> {
     return new Promise((resolve, reject) => {
       setTimeout(() => resolve("Promise complete!"), 3000);
     })
