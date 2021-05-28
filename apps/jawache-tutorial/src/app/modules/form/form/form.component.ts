@@ -31,17 +31,27 @@ export class FormComponent implements OnInit {
       name: this.name,
       email: this.email
     });
-    this.form.valueChanges.pipe(
-      filter( () => this.form.valid ),
-      map ( (data: any) => {
-          data.comment = data.comment.replace(/<(?:.|\n)*?>/gm, '');
-          return data
-      }),
-      map ( (data: any) => {
-          data.lastUpdateTS = new Date();
-          return data
-      })
-    ).subscribe( (data: any) => console.log(JSON.stringify(data)))
+    // this.form.valueChanges.pipe(
+    //   filter( () => this.form.valid ),
+    //   map ( (data: any) => {
+    //       data.comment = data.comment.replace(/<(?:.|\n)*?>/gm, '');
+    //       return data
+    //   }),
+    //   map ( (data: any) => {
+    //       data.lastUpdateTS = new Date();
+    //       return data
+    //   })
+    // ).subscribe( (data: any) => console.log(JSON.stringify(data)))
+    this.form.valueChanges
+      .subscribe( 
+         (data: any) => {
+           if (this.form.valid) {
+             data.comment = data.comment.replace(/<(?:.|\n)*?>/gm, '');
+             data.lastUpdateTS = new Date();
+             console.log(JSON.stringify(data))
+           }
+         }
+      )
 
   }
 
