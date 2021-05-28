@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { myFormModule } from './modules/form/form.module'
 import { PipesModule } from './modules/pipes/pipes.module';
 
@@ -24,6 +25,7 @@ import { CardHoverDirective } from './directives/card-hover.directive';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     PanelModule,
     CardModule,
     ButtonModule,

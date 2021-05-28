@@ -5,14 +5,18 @@ import {PanelModule} from 'primeng/panel';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ObservableasyncComponent } from './observableasync/observableasync.component';
+import { CustomizedpipePipe } from './customizedpipe.pipe';
+import { ComponenttotestcustomizedpipeComponent } from './componenttotestcustomizedpipe/componenttotestcustomizedpipe.component';
 
 
 @NgModule({
   declarations: [
     AsyncComponent,
-    ObservableasyncComponent
+    ObservableasyncComponent,
+    CustomizedpipePipe,
+    ComponenttotestcustomizedpipeComponent
   ],
-  exports: [AsyncComponent, ObservableasyncComponent],
+  exports: [AsyncComponent, ObservableasyncComponent, ComponenttotestcustomizedpipeComponent],
   imports: [
     CommonModule,
     BrowserAnimationsModule,
