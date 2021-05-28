@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AsyncComponent } from './async/async.component';
+import {PanelModule} from 'primeng/panel';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -10,7 +12,9 @@ import { AsyncComponent } from './async/async.component';
   ],
   exports: [AsyncComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserAnimationsModule,
+    PanelModule
   ]
 })
 export class PipesModule { }
