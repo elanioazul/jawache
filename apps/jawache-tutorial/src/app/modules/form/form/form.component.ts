@@ -31,7 +31,7 @@ export class FormComponent implements OnInit {
       name: this.name,
       email: this.email
     });
-    this.form.get("email").valueChanges.pipe(
+    this.form.valueChanges.pipe(
       filter( () => this.form.valid )
     ).subscribe( (data: any) => console.log(JSON.stringify(data)))
 
