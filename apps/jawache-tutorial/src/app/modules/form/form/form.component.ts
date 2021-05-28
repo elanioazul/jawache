@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
+import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
+
 @Component({
   selector: 'jawache-tutorial-form',
   templateUrl: './form.component.html',
@@ -28,7 +31,10 @@ export class FormComponent implements OnInit {
       name: this.name,
       email: this.email
     });
-    this.form.get("comment").valueChanges.subscribe( (data: any) => console.log(JSON.stringify(data)))
+    this.form.get("email").valueChanges.pipe(
+      filter( () => this.form.valid )
+    ).subscribe( (data: any) => console.log(JSON.stringify(data)))
+
   }
 
   onSubmit() {
