@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 import { from } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'jawache-tutorial-form',
@@ -32,7 +32,11 @@ export class FormComponent implements OnInit {
       email: this.email
     });
     this.form.valueChanges.pipe(
-      filter( () => this.form.valid )
+      filter( () => this.form.valid ),
+      map ( (data: any) => {
+          data.comment = data.comment.replace(/<(?:.|\n)*?>/gm, '');
+          return data
+      })
     ).subscribe( (data: any) => console.log(JSON.stringify(data)))
 
   }
