@@ -36,6 +36,10 @@ export class FormComponent implements OnInit {
       map ( (data: any) => {
           data.comment = data.comment.replace(/<(?:.|\n)*?>/gm, '');
           return data
+      }),
+      map ( (data: any) => {
+          data.lastUpdateTS = new Date();
+          return data
       })
     ).subscribe( (data: any) => console.log(JSON.stringify(data)))
 
