@@ -4,9 +4,9 @@
     Consequuntur repudiandae, nisi provident quis, asperiores esse minima minus, debitis reprehenderit hic eius quasi
     laboriosam suscipit temporibus pariatur id quos. Nihil, temporibus!</p>
   <ng-template pTemplate="content" ngNonBindable>
-    {{observableData}}
+    {{observable}}
   </ng-template>
   <ng-template pTemplate="footer">
-    {{observableData}}
+    {{observable | async}}
   </ng-template>
 </p-panel>

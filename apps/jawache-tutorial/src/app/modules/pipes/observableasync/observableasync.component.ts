@@ -6,13 +6,13 @@ import { Observable, interval} from 'rxjs';
   templateUrl: './observableasync.component.html',
   styleUrls: ['./observableasync.component.scss']
 })
-export class ObservableasyncComponent implements OnInit, OnDestroy {
+export class ObservableasyncComponent implements OnInit {
 
-  public observableData: number | undefined;
+  public observable: Observable<number> | undefined;
   subscription: any = null;
 
   constructor() { 
-    this.subscribeObservable();
+    this.observable = this.getObservable();
   }
 
   ngOnInit(): void {
@@ -24,16 +24,16 @@ export class ObservableasyncComponent implements OnInit, OnDestroy {
     return takeFourNumbers;
   }
 
-  subscribeObservable() {
-    this.subscription = this.getObservable().subscribe((v: any) => {
-      this.observableData = v
-    })
-  }
+  // subscribeObservable() {
+  //   this.subscription = this.getObservable().subscribe((v: any) => {
+  //     this.observableData = v
+  //   })
+  // }
 
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-  }
+  // ngOnDestroy() {
+  //   if (this.subscription) {
+  //     this.subscription.unsubscribe();
+  //   }
+  // }
 
 }
