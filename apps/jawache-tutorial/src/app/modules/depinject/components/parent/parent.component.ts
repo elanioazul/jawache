@@ -4,7 +4,8 @@ import { SimpleService } from '../../services/simple.service';
 @Component({
   selector: 'jawache-tutorial-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.scss']
+  styleUrls: ['./parent.component.scss'],
+  providers: [ SimpleService]
 })
 export class ParentComponent implements OnInit {
 
