@@ -7,8 +7,9 @@ import {InputTextModule} from 'primeng/inputtext';
 
 import { FormsModule } from '@angular/forms';
 
-
+import { SimpleService } from './services/simple.service'
 @NgModule({
+  providers: [SimpleService],
   declarations: [
     ParentComponent,
     ChildComponent
