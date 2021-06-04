@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { myFormModule } from './modules/form/form.module'
 import { PipesModule } from './modules/pipes/pipes.module';
+import { DepinjectModule } from './modules/depinject/depinject.module';
 
 import { AppComponent } from './app.component';
 
@@ -30,7 +31,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     CardModule,
     ButtonModule,
     myFormModule,
-    PipesModule
+    PipesModule,
+    DepinjectModule
   ],
   providers: [],
   bootstrap: [AppComponent],
