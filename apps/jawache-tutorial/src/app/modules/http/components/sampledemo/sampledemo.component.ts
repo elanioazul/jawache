@@ -34,6 +34,11 @@ export class SampledemoComponent implements OnInit {
 
   doPOST() {
     console.log("POST");
+    this.url = `${this.apiRoot}/post`;
+    this.httpClient.post<string>(this.url, {moo:"foo",goo:"loo"}).subscribe(
+      (res:string) => 
+      console.log(res)
+    )
   }
 
   doPUT() {
