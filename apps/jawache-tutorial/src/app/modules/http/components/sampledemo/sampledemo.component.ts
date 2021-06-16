@@ -10,6 +10,7 @@ export class SampledemoComponent implements OnInit {
 
   public apiRoot = "http://httpbin.org";
   public url!: string | null; 
+  public search!: URLSearchParams | null;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -20,7 +21,12 @@ export class SampledemoComponent implements OnInit {
   doGET() {
     console.log("GET");
     this.url = `${this.apiRoot}/get`;
-    this.httpClient.get<string>(this.url).subscribe(
+    this.httpClient.get<string>(this.url,{
+      params: {
+        'foo': 'moo',
+        'limit': 25
+      }
+    }).subscribe(
       (res:string) => 
       console.log(res)
     )
