@@ -72,6 +72,10 @@ export class SampledemoComponent implements OnInit {
 
   doGETAsPromise() {
     console.log("GET AS PROMISE");
+    this.url = `${this.apiRoot}/get`;
+    this.httpClient.get(this.url)
+      .toPromise()
+      .then(res => console.log(res));
   }
 
   doGETAsPromiseError() {
