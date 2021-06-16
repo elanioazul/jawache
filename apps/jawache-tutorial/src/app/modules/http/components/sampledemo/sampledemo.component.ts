@@ -80,6 +80,13 @@ export class SampledemoComponent implements OnInit {
 
   doGETAsPromiseError() {
     console.log("GET AS PROMISE ERROR");
+    this.url = `${this.apiRoot}/post`;
+    this.httpClient.get(this.url)
+      .toPromise()
+      .then(
+        res => console.log(res),
+        err => console.error(err)
+      );
   }
 
   doGETAsObservableError() {
