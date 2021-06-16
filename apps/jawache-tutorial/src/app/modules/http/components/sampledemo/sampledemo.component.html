@@ -1,26 +1,26 @@
 <div class="row">
   <div class="row__1">
-    <button pButton type="button" label="Primary" (click)="doGET()">GET</button>
-    <button pButton type="button" label="Primary" (click)="doPOST()">POST</button>
-    <button pButton type="button" label="Primary" (click)="doPUT()">PUT</button>
-    <button pButton type="button" label="Primary" (click)="doDELETE()">DELETE</button>
+    <button pButton type="button" (click)="doGET()">GET</button>
+    <button pButton type="button" (click)="doPOST()">POST</button>
+    <button pButton type="button" (click)="doPUT()">PUT</button>
+    <button pButton type="button" (click)="doDELETE()">DELETE</button>
   </div>
 </div>
 
 <div class="row">
   <div class="row__2">
-    <button pButton type="button" label="Warning" class="p-button-warning" (click)="doGETAsPromise()">As
+    <button pButton type="button" class="p-button-warning" (click)="doGETAsPromise()">As
       Promise</button>
-    <button pButton type="button" label="Warning" class="p-button-warning" (click)="doGETAsPromiseError()">Error as
+    <button pButton type="button" class="p-button-warning" (click)="doGETAsPromiseError()">Error as
       Promise</button>
-    <button pButton type="button" label="Warning" class="p-button-warning" (click)="doGETAsObservableError()">Error as
+    <button pButton type="button" class="p-button-warning" (click)="doGETAsObservableError()">Error as
       Observable</button>
   </div>
 </div>
 
 <div class="row">
   <div class="row__3">
-    <button pButton type="button" label="Danger" class="p-button-danger" (click)="doGETWithHeaders()">With
+    <button pButton type="button" class="p-button-danger" (click)="doGETWithHeaders()">With
       Headers</button>
   </div>
 </div>

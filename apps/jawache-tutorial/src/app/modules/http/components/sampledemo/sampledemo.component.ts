@@ -42,6 +42,16 @@ export class SampledemoComponent implements OnInit {
 
   doDELETE() {
     console.log("DELETE");
+    this.url = `${this.apiRoot}/delete`;
+    this.httpClient.delete<string>(this.url,{
+      params: {
+        'foo': 'moo',
+        'limit': 25
+      }
+    }).subscribe(
+      (res:string) => 
+      console.log(res)
+    )
   }
 
   doGETAsPromise() {
