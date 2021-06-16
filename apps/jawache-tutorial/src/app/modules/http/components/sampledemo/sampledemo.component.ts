@@ -8,13 +8,22 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SampledemoComponent implements OnInit {
 
-  constructor(private httpClient: HttpClient,) { }
+  public apiRoot = "http://httpbin.org";
+  public url!: string | null; 
+
+  constructor(private httpClient: HttpClient) {
+  }
 
   ngOnInit(): void {
   }
 
   doGET() {
     console.log("GET");
+    this.url = `${this.apiRoot}/get`;
+    this.httpClient.get<string>(this.url).subscribe(
+      (res:string) => 
+      console.log(res)
+    )
   }
 
   doPOST() {
