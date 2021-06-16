@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { myFormModule } from './modules/form/form.module'
 import { PipesModule } from './modules/pipes/pipes.module';
 import { DepinjectModule } from './modules/depinject/depinject.module';
+import { myHttpModule } from './modules/http/http.module'
 
 import { AppComponent } from './app.component';
 
@@ -32,7 +33,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     ButtonModule,
     myFormModule,
     PipesModule,
-    DepinjectModule
+    DepinjectModule,
+    myHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent],
