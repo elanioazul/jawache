@@ -84,9 +84,9 @@ export class SampledemoComponent implements OnInit {
     this.httpClient.get(this.url)
       .toPromise()
       .then(
-        res => console.log(res),
-        err => console.error(err)
-      );
+        res => console.log(res)
+      )
+      .catch((err) => console.error(err));
   }
 
   doGETAsObservableError() {
