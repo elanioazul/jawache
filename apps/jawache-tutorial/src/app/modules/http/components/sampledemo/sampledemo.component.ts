@@ -46,6 +46,14 @@ export class SampledemoComponent implements OnInit {
 
   doPUT() {
     console.log("PUT");
+    this.url = `${this.apiRoot}/put`;
+    this.httpClient.put<string>(this.url, {moo:"foo",goo:"loo"},{params: {
+        'foo': 'moo',
+        'limit': 25
+      }}).subscribe(
+      (res:string) => 
+      console.log(res)
+    )
   }
 
   doDELETE() {
