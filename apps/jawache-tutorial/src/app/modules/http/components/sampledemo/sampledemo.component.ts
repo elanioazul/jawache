@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'jawache-tutorial-sampledemo',
@@ -11,6 +11,7 @@ export class SampledemoComponent implements OnInit {
   public apiRoot = "http://httpbin.org";
   public url!: string | null; 
   public search!: URLSearchParams | null;
+  public myCustomizedHeaders!: HttpHeaders;
 
   constructor(private httpClient: HttpClient) {
   }
@@ -80,7 +81,7 @@ export class SampledemoComponent implements OnInit {
 
   doGETAsPromiseError() {
     console.log("GET AS PROMISE ERROR");
-    this.url = `${this.apiRoot}/post`;
+    this.url = `${this.apiRoot}/get`;
     this.httpClient.get(this.url)
       .toPromise()
       .then(
@@ -95,6 +96,19 @@ export class SampledemoComponent implements OnInit {
 
   doGETWithHeaders() {
     console.log("GET WITH HEADERS");
+    this.myCustomizedHeaders = new HttpHeaders({
+      'Authorization': btoa('username:password')
+    });
+    const options = {
+      headers: this.myCustomizedHeaders
+    }
+    this.url = `${this.apiRoot}/get`;
+    this.httpClient.get(this.url, options)
+      .toPromise()
+      .then(
+        res => console.log(res)
+      )
+      .catch((err) => console.error(err));
   }
 
 }
