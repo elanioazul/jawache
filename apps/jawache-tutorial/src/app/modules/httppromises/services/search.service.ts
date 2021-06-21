@@ -11,7 +11,7 @@ interface results {
 
 export class SearchService {
   public apiRoot = 'https://itunes.apple.com/search';
-  public results: any[];
+  public results: Searchitem[];
   public loading: boolean;
 
   constructor(private httpClient: HttpClient) {
