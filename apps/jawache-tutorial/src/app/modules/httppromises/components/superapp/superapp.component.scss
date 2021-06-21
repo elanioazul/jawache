@@ -1,0 +1,13 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 50px;
+
+  &__group {
+    padding: 20px 20px;
+    background-color: bisque;
+  }
+}
