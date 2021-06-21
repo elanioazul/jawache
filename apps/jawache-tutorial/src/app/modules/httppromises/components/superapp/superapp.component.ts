@@ -8,15 +8,13 @@ import { SearchService } from '../../services/search.service';
 })
 export class SuperappComponent implements OnInit {
 
-  constructor(private itunesSearchS: SearchService) { }
+  constructor(public itunes: SearchService) { }
 
   ngOnInit(): void {
   }
 
-  
   doSearch(term:string) {
-    //console.log(term)
-    this.itunesSearchS.search(term)
+    this.itunes.search(term);
   }
 
 }
