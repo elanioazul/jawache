@@ -5,6 +5,7 @@
   <div class="form__group">
     <button pButton type="button" label="Click" (click)="doSearch(search.value)"></button>
   </div>
+  <p-progressSpinner *ngIf="loading"></p-progressSpinner>
   <div class="tracks">
     <ul class="tracks__ul">
       <li class="tracks__item" *ngFor="let track of itunes.results">
