@@ -5,7 +5,8 @@ import { myFormModule } from './modules/form/form.module'
 import { PipesModule } from './modules/pipes/pipes.module';
 import { DepinjectModule } from './modules/depinject/depinject.module';
 import { myHttpModule } from './modules/http/http.module';
-import { HttppromisesModule } from './modules/httppromises/httppromises.module'
+import { HttppromisesModule } from './modules/httppromises/httppromises.module';
+import { SearchService } from './modules/httppromises/services/search.service'
 
 import { AppComponent } from './app.component';
 
@@ -38,7 +39,7 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     myHttpModule,
     HttppromisesModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
