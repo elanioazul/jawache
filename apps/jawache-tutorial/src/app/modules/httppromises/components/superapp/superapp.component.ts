@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'jawache-tutorial-superapp',
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuperappComponent implements OnInit {
 
-  constructor() { }
+  constructor(private itunesSearchS: SearchService) { }
 
   ngOnInit(): void {
   }
 
   
   doSearch(term:string) {
-    console.log(term)
+    //console.log(term)
+    this.itunesSearchS.search(term)
   }
 
 }
