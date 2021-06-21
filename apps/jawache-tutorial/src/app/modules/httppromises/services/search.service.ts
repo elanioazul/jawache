@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
+import { Searchitem } from '../clases/searchitem';
 interface results {
   resultCount: number,
   results: any[]
@@ -26,7 +26,15 @@ export class SearchService {
         .toPromise()
         .then(
           res => { // Success
-            this.results = res['results'];
+            this.results = res['results'].map(item => {
+              return new Searchitem(
+                item.trackName,
+                item.artistName,
+                item.trackViewUrl,
+                item.artworkUrl30,
+                item.artistId
+              )
+            });
             resolve("done");
             console.log(this.results)
           },
