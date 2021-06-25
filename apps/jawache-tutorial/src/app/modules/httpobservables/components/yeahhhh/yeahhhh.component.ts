@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
-import { Searchitem } from '../../clases/searchitem'
+import { Searchitem } from '../../clases/searchitem';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'jawache-tutorial-yeahhhh',
@@ -10,7 +11,7 @@ import { Searchitem } from '../../clases/searchitem'
 export class YeahhhhComponent implements OnInit {
 
   public loading = false;
-  public results: Searchitem[] | undefined;
+  public results: Observable<Searchitem[]> | undefined;
 
   constructor(private itunesS: SearchService) { }
 
@@ -19,9 +20,6 @@ export class YeahhhhComponent implements OnInit {
 
   doSearch(term:string) {
     this.loading = true;
-    this.itunesS.search(term).subscribe( data => {
-      this.loading = false;
-      this.results = data
-    });
+    this.results = this.itunesS.search(term);
   }
 }

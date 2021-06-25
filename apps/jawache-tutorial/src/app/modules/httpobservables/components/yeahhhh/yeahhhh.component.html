@@ -8,7 +8,7 @@
   <p-progressSpinner *ngIf="loading"></p-progressSpinner>
   <div class="tracks">
     <ul class="tracks__ul">
-      <li class="tracks__item" *ngFor="let track of results">
+      <li class="tracks__item" *ngFor="let track of results | async">
         <img src="{{track.thumbnail}}">
         <a target="_blank" href="{{track.link}}">{{ track.name }}</a>
         <p style="display: inline;"> {{ track.artist }}</p>
