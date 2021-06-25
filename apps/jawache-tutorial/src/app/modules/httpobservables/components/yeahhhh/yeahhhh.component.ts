@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../services/search.service';
+import { Searchitem } from '../../clases/searchitem'
 
 @Component({
   selector: 'jawache-tutorial-yeahhhh',
@@ -7,12 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class YeahhhhComponent implements OnInit {
 
-  constructor() { }
+  private loading = false;
+  private results: Searchitem[] | undefined;
+
+  constructor(private itunesS: SearchService) { }
 
   ngOnInit(): void {
   }
 
   doSearch(term:string) {
-    console.log(term)
+    this.loading = true;
+    this.itunesS.search(term).subscribe( data => {
+      this.loading = false;
+      this.results = data
+    });
   }
 }
