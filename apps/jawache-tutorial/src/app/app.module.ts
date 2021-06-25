@@ -4,7 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { myFormModule } from './modules/form/form.module'
 import { PipesModule } from './modules/pipes/pipes.module';
 import { DepinjectModule } from './modules/depinject/depinject.module';
-import { myHttpModule } from './modules/http/http.module'
+import { myHttpModule } from './modules/http/http.module';
+import { HttpobservablesModule } from './modules/httpobservables/httpobservables.module'
 
 import { AppComponent } from './app.component';
 
@@ -34,7 +35,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     myFormModule,
     PipesModule,
     DepinjectModule,
-    myHttpModule
+    myHttpModule,
+    HttpobservablesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
