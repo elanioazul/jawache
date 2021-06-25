@@ -10,7 +10,7 @@ import { Searchitem } from '../../clases/searchitem'
 export class YeahhhhComponent implements OnInit {
 
   private loading = false;
-  private results: Searchitem[] | undefined;
+  public results: Searchitem[] | undefined;
 
   constructor(private itunesS: SearchService) { }
 
