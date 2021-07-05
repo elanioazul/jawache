@@ -5,7 +5,7 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { HttpClientModule } from '@angular/common/http';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ButtonModule,
     InputTextModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [YeahhhhComponent]
 })

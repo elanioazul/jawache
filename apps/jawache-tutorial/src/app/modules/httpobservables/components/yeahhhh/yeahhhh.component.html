@@ -1,6 +1,6 @@
 <form class="form">
   <div class="form__group">
-    <input type="text" pInputText #search />
+    <input type="text" pInputText #search [formControl]="searchField" />
   </div>
   <div class="form__group">
     <button pButton type="button" label="Click" (click)="doSearch(search.value)"></button>
