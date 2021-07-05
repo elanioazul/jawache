@@ -5,8 +5,7 @@
   <div class="form__group">
     <button pButton type="button" label="Click" (click)="doSearch(search.value)"></button>
   </div>
-  <p-progressSpinner *ngIf="loading"></p-progressSpinner>
-  <div class="tracks">
+<div class="tracks" *ngIf="results | async; else loading">
     <ul class="tracks__ul">
       <li class="tracks__item" *ngFor="let track of results | async">
         <img src="{{track.thumbnail}}">
@@ -15,4 +14,7 @@
       </li>
     </ul>
   </div>
+  <ng-template #loading>
+    <p-progressSpinner></p-progressSpinner>
+  </ng-template>
 </form>

@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class YeahhhhComponent implements OnInit {
 
-  public loading = false;
+  //public loading = false;
   public results: Observable<Searchitem[]> | undefined;
 
   constructor(private itunesS: SearchService) { }
@@ -19,7 +19,7 @@ export class YeahhhhComponent implements OnInit {
   }
 
   doSearch(term:string) {
-    this.loading = true;
+    //this.loading = true;
     this.results = this.itunesS.search(term);
   }
 }
