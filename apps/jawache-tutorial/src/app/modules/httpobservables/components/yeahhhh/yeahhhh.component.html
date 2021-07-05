@@ -2,10 +2,7 @@
   <div class="form__group">
     <input type="text" pInputText #search [formControl]="$any(searchField)" />
   </div>
-  <div class="form__group">
-    <button pButton type="button" label="Click" (click)="doSearch(search.value)"></button>
-  </div>
-<div class="tracks" *ngIf="results | async; else loading">
+  <div class="tracks" *ngIf="results | async; else loading">
     <ul class="tracks__ul">
       <li class="tracks__item" *ngFor="let track of results | async">
         <img src="{{track.thumbnail}}">

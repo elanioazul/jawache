@@ -4,7 +4,7 @@ import { Searchitem } from '../../clases/searchitem';
 import { Observable } from 'rxjs';
 
 import { FormBuilder, FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'jawache-tutorial-yeahhhh',
@@ -21,12 +21,12 @@ export class YeahhhhComponent implements OnInit {
   ngOnInit(): void {
     this.searchField = new FormControl();
     this.searchField.valueChanges
-    .pipe(debounceTime(400), distinctUntilChanged())
-    .subscribe(); // Need to call subscribe to make it hot!
-  }
-
-  doSearch(term:string) {
-    //this.loading = true;
-    this.results = this.itunesS.search(term);
+    .pipe(
+      debounceTime(400), distinctUntilChanged(),
+      map( term => this.itunesS.search(term))
+    )
+    .subscribe( value => { 
+        value.subscribe( other => console.log(other) )
+    });
   }
 }
