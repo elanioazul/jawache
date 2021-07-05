@@ -13,18 +13,16 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 })
 export class YeahhhhComponent implements OnInit {
 
-  public searchField: FormControl;
+  public searchField: FormControl | undefined;
   public results: Observable<Searchitem[]> | undefined;
 
-  constructor(private itunesS: SearchService) {
+  constructor(private itunesS: SearchService) {}
+
+  ngOnInit(): void {
     this.searchField = new FormControl();
     this.searchField.valueChanges
     .pipe(debounceTime(400), distinctUntilChanged())
     .subscribe(); // Need to call subscribe to make it hot!
-  }
-
-  ngOnInit(): void {
-    
   }
 
   doSearch(term:string) {
