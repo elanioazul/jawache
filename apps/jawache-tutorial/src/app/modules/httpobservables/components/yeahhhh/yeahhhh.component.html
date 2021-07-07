@@ -2,7 +2,7 @@
   <div class="form__group">
     <input type="text" pInputText #search [formControl]="$any(searchField)" />
   </div>
-  <div class="tracks" *ngIf="results | async; else loading">
+  <div class="tracks" *ngIf="results | async">
     <ul class="tracks__ul">
       <li class="tracks__item" *ngFor="let track of results | async">
         <img src="{{track.thumbnail}}">
@@ -11,7 +11,5 @@
       </li>
     </ul>
   </div>
-  <ng-template #loading>
-    <p-progressSpinner></p-progressSpinner>
-  </ng-template>
+  <p-progressSpinner *ngIf="loading"></p-progressSpinner>
 </form>
