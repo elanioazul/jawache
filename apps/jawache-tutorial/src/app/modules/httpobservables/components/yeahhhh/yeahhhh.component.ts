@@ -20,11 +20,11 @@ export class YeahhhhComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchField = new FormControl();
-    this.searchField.valueChanges
+    this.results = this.searchField.valueChanges
     .pipe(
       debounceTime(400), distinctUntilChanged(),
       switchMap( term => this.itunesS.search(term))
     )
-    .subscribe( value => console.log(value));
+    // .subscribe( value => console.log(value));
   }
 }
