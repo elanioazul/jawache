@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__brand {
+    flex-grow: 2;
+    padding: 1rem 2rem;
+  }
+
+  &__navigator {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2rem;
+
+    &-item {
+      flex-grow: 1;
+    }
+    &-link {
+      flex-direction: 1;
+    }
+  }
+}

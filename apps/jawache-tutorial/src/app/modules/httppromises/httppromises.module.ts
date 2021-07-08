@@ -5,11 +5,15 @@ import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
-    SuperappComponent
+    SuperappComponent,
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -18,6 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     InputTextModule,
     ProgressSpinnerModule
   ],
-  exports: [SuperappComponent]
+  exports: [HeaderComponent, HomeComponent,SuperappComponent]
 })
 export class HttppromisesModule { }
