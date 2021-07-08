@@ -19,6 +19,7 @@ import {CardModule} from 'primeng/card';
 import {ButtonModule} from 'primeng/button';
 import { JokeComponent } from './components/joke/joke.component';
 import { CardHoverDirective } from './directives/card-hover.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CardHoverDirective } from './directives/card-hover.directive';
     PipesModule,
     DepinjectModule,
     myHttpModule,
-    HttppromisesModule
+    HttppromisesModule,
+    AppRoutingModule
   ],
   providers: [SearchService],
   bootstrap: [AppComponent],
