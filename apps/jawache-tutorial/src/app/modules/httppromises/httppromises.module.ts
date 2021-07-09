@@ -7,6 +7,7 @@ import {ProgressSpinnerModule} from 'primeng/progressspinner';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from './components/home/home.component';
     HttpClientModule,
     ButtonModule,
     InputTextModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    RouterModule
   ],
   exports: [HeaderComponent, HomeComponent,SuperappComponent]
 })

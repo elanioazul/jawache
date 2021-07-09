@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Router, ActivatedRoute, ParamMap} from "@angular/router";
 @Component({
   selector: 'jawache-tutorial-header',
   templateUrl: './header.component.html',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goHome() {
+    this.router.navigate(["home"]);
+  }
+
+  goSearch() {
+    this.router.navigate(["search"]);
   }
 
 }
