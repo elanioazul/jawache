@@ -8,13 +8,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule} from '@angular/router';
+import { ArtistComponent } from './components/artist/artist.component';
+import { ArtistTrackListComponent } from './components/artist-track-list/artist-track-list.component';
+import { ArtistAlbumListComponent } from './components/artist-album-list/artist-album-list.component';
 
 
 @NgModule({
   declarations: [
     SuperappComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ArtistComponent,
+    ArtistTrackListComponent,
+    ArtistAlbumListComponent
   ],
   imports: [
     CommonModule,

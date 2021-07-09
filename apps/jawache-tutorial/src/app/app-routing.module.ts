@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HomeComponent} from './modules/httppromises/components/home/home.component';
 import { SuperappComponent} from './modules/httppromises/components/superapp/superapp.component';
+import { ArtistComponent } from './modules/httppromises/components/artist/artist.component';
 
 import { Routes, RouterModule } from '@angular/router';
 
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'search', component: SuperappComponent },
   { path: 'search/:term', component: SuperappComponent },
+  { path: 'artist/:artistId', component: ArtistComponent},
   { path: '**', component: HomeComponent }
 ]; 
 
