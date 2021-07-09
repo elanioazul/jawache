@@ -1,1 +1,8 @@
-<p>He is going to be track-list</p>
+<p>Tracks-list</p>
+<ul class="list-group">
+  <li class="list-group__item" *ngFor="let track of tracks">
+    <img src="{{track.artworkUrl30}}">
+    <a target="_blank" href="{{track.trackViewUrl}}">{{ track.trackName }} - {{track.collectionName}}
+    </a>
+  </li>
+</ul>

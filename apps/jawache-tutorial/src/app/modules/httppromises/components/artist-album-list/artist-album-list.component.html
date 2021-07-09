@@ -1,1 +1,8 @@
-<p>He is going to be album-list</p>
+<p>Album-list</p>
+<ul class="list-group">
+  <li class="list-group__item" *ngFor="let album of albums">
+    <img src="{{album.artworkUrl100}}">
+    <a target="_blank" href="{{album.collectionViewUrl}}">{{ album.discNumber }} - {{album.collectionName}}
+    </a>
+  </li>
+</ul>
