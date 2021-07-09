@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'find', redirectTo: 'search'},
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SuperappComponent }
+  { path: 'search', component: SuperappComponent },
+  { path: '**', component: HomeComponent }
 ]; 
 
 @NgModule({
