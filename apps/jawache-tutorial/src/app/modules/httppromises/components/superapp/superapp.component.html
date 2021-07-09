@@ -4,7 +4,7 @@
     <input type="text" pInputText #search />
   </div>
   <div class="form__group">
-    <button pButton type="button" label="Click" (click)="doSearch(search.value)"></button>
+    <button pButton type="button" label="Click" (click)="onSearch(search.value)"></button>
   </div>
   <p-progressSpinner *ngIf="loading"></p-progressSpinner>
   <div class="tracks">

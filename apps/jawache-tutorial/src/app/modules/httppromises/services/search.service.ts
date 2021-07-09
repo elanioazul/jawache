@@ -36,7 +36,7 @@ export class SearchService {
               )
             });
             resolve("done");
-            console.log(this.results)
+            //console.log(this.results)
           },
           msg => { // Error
           reject(msg);

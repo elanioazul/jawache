@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
     ) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => this.iTunesS.search(params['term']));
+    //this.route.params.subscribe(params => this.iTunesS.search(params['term']));
 
   }
 
