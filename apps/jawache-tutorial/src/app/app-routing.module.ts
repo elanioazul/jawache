@@ -7,7 +7,9 @@ import { SuperappComponent} from './modules/httppromises/components/superapp/sup
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'find', redirectTo: 'search'},
+  { path: 'home', component: HomeComponent },
   { path: 'search', component: SuperappComponent }
 ]; 
 
