@@ -1,7 +1,30 @@
-h1 {
+.artist {
   font-size: 3rem;
   font-style: normal;
   color: black;
+
+  &__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 3rem;
+  }
+
+  &__name {
+    display: block;
+    font-size: 4rem;
+    color: black;
+  }
+  &__tag {
+    display: block;
+    font-size: 3rem;
+    color: whitesmoke;
+  }
+  &__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .active {

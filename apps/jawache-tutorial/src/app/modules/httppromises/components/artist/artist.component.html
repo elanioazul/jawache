@@ -1,5 +1,9 @@
-<h1>Artist page</h1>
-<p>
+<h1 class="artist">Artist page</h1>
+<div class="artist__description">
+  <h4 class="artist__name">{{ selectedArtist?.artistName }}</h4>
+  <h4 class="artist__tag">{{ selectedArtist?.primaryGenreName }}</h4>
+</div>
+<p class="artist__options">
   <a [routerLink]="['./tracks']" routerLinkActive="active">Tracks</a> |
   <a [routerLink]="['./albums']" routerLinkActive="active">Albums</a>
 </p>
