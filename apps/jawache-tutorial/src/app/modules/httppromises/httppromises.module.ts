@@ -12,6 +12,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { ArtistTrackListComponent } from './components/artist-track-list/artist-track-list.component';
 import { ArtistAlbumListComponent } from './components/artist-album-list/artist-album-list.component';
 import { AlwaysAuthGuardGuard} from './guards/always-auth-guard.guard';
+import { OnlyLoggedInUsersGuard } from './guards/only-logged-in-users.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { AlwaysAuthGuardGuard} from './guards/always-auth-guard.guard';
     ProgressSpinnerModule,
     RouterModule
   ],
-  providers: [AlwaysAuthGuardGuard],
+  providers: [AlwaysAuthGuardGuard, OnlyLoggedInUsersGuard],
   exports: [HeaderComponent, HomeComponent,SuperappComponent]
 })
 export class HttppromisesModule { }
