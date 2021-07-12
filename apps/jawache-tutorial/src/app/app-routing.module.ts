@@ -8,6 +8,7 @@ import { ArtistTrackListComponent } from './modules/httppromises/components/arti
 import { ArtistAlbumListComponent } from './modules/httppromises/components/artist-album-list/artist-album-list.component';
 
 import { Routes, RouterModule } from '@angular/router';
+import { AlwaysAuthGuardGuard } from './modules/httppromises/guards/always-auth-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'search/:term', component: SuperappComponent },
   { 
     path: 'artist/:artistId', component: ArtistComponent,
+    canActivate: [AlwaysAuthGuardGuard],
     children: [
       {path: '', redirectTo: 'tracks', pathMatch: 'full'},
       {path: 'tracks', component: ArtistTrackListComponent},
