@@ -41,4 +41,8 @@ export class SuperappComponent implements OnInit {
     this.router.navigate(['search', {term: term}]);
   }
 
+  canDeactivate() {
+    return this.itunes.results.length > 0; // to assess whether or not it has unsaved changes. As a proxy for unsaved changes we are just seeing if the user has performed a search, if so then the results array should be > 0.
+  }
+
 }
