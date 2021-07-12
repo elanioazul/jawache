@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../../services/search.service';
 import { Router, ActivatedRoute } from "@angular/router";
-
+import { Searchitem } from '../../clases/searchitem';
 @Component({
   selector: 'jawache-tutorial-superapp',
   templateUrl: './superapp.component.html',
@@ -41,7 +41,7 @@ export class SuperappComponent implements OnInit {
     this.router.navigate(['search', {term: term}]);
   }
 
-  canDeactivate() {
+  canDeactivate(): boolean  {
     return this.itunes.results.length > 0; // to assess whether or not it has unsaved changes. As a proxy for unsaved changes we are just seeing if the user has performed a search, if so then the results array should be > 0.
   }
 

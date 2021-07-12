@@ -17,13 +17,14 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: 'find', redirectTo: 'search'},
   { path: 'home', component: HomeComponent },
-  { path: 'search', component: SuperappComponent },
+  { path: 'search', component: SuperappComponent,
+    canDeactivate: [ UnserchedTermGuard],  
+  },
   { path: 'search/:term', component: SuperappComponent },
   { 
     path: 'artist/:artistId', component: ArtistComponent,
     canActivate: [AlwaysAuthGuardGuard, OnlyLoggedInUsersGuard],
     canActivateChild: [AlwaysAuthChildrenGuardGuard],
-    canDeactivate: [ UnserchedTermGuard],
     children: [
       {path: '', redirectTo: 'tracks', pathMatch: 'full'},
       {path: 'tracks', component: ArtistTrackListComponent},
